@@ -23,7 +23,7 @@ const links = [
   },
   {
     title: 'Iniciar sesión',
-    url: '/'
+    url: '/login'
   },
 ]
 

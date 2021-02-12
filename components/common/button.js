@@ -43,7 +43,6 @@ const PrimaryButton = styled.button`
 
 const SecondaryButton = styled(PrimaryButton)`
   background-color: transparent;
-  font-weight: normal;
   border: 1px solid #373535;
   padding: 12px 30px;
 `
