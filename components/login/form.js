@@ -5,19 +5,41 @@ import { SecondaryButton } from 'common/button'
 import Input from 'common/input'
 import Divider from 'common/divider'
 
-const FormStyled = styled.form`
-  width: 440px;
-  height: 510px;
+const Container = styled.div`
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
   background-color: white;
-  opacity: 0.7;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 0 auto; 
-  padding: 50px 60px;
+  opacity: 0.5;
 
+  @media screen and (min-width: 550px) {
+    background: transparent;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`
+
+const FormStyled = styled.form`
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 550px) {
+    padding: 50px 60px;
+    width: 440px;
+    height: 510px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 6px;
+    opacity: 0.7;
+  }
 `
 
 function Form() {
@@ -26,15 +48,17 @@ function Form() {
     console.log('se intento recargar la página')
   }
   return (
-    <FormStyled onSubmit={handleSubmit} method="POST">
-      <Logo />
-      <Divider marginVertical={22.5} />
-      <Input type="text" placeholder="Correo electrónico" />
-      <Divider marginVertical={17.5} />
-      <Input type="password" placeholder="Contraseña" />
-      <Divider marginVertical={22.5} />
-      <SecondaryButton uppercase>iniciar sesión</SecondaryButton>
-    </FormStyled>
+    <Container>
+      <FormStyled onSubmit={handleSubmit} method="POST">
+        <Logo />
+        <Divider marginVertical={22.5} />
+        <Input type="text" placeholder="Correo electrónico" />
+        <Divider marginVertical={17.5} />
+        <Input type="password" placeholder="Contraseña" />
+        <Divider marginVertical={22.5} />
+        <SecondaryButton uppercase>iniciar sesión</SecondaryButton>
+      </FormStyled>
+    </Container>
   )
 }
 

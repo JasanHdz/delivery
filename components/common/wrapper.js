@@ -6,7 +6,6 @@ const WraperStyled = styled.div`
   margin: 0 auto;
   padding: 1rem 2rem;
   max-width: ${({ maxWidth }) => maxWidth || '1280px'};
-  width: 100%;
 `
 
 function Wrapper({ children, maxWidth, className }) {

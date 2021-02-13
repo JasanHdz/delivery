@@ -11,6 +11,7 @@ const Box = styled.a`
   justify-content: center;
   cursor: pointer;
   color: white;
+  margin: 0 auto;
   .box-title {
     text-transform: uppercase;
   }

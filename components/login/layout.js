@@ -5,8 +5,12 @@ const Background = styled.div`
   min-height: 100vh;
   background-color: #5AA2BB;
   background-image: url('/home_full.jpg');
-  background-position-x: center;
   background-size: cover;
+  background-position-x: -1078px;
+
+  @media screen and (min-width: 768px) {
+    background-position-x: center;
+  }
 ` 
 
 function Layout({ children }) {

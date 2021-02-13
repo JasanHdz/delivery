@@ -6,10 +6,8 @@ import Form from 'components/login/form'
 function Login() {
   return (
     <Layout>
-      <Menu />
-      <Wrapper>
-        <Form />
-      </Wrapper>
+      {/* <Menu /> */}
+      <Form />
     </Layout>
   )
 }
