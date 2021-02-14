@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import Logo from './logo'
-import Wrapper from './wrapper'
 
 const links = [
   {
@@ -28,33 +27,50 @@ const links = [
 ]
 
 const MenuStyled = styled.nav`
-  /* height: 80px; */
+  padding: 56px 0 0 1rem;
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  min-height: 100vh;
+  max-width: 250px;
+  box-sizing: border-box;
+  z-index: 2;
+  overflow-y: auto;
+  transform: translateX(-250px);
+  transition: 0.3s transform;
+
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   .item {
     text-transform: uppercase;
-    margin-left: 30px;
+    /* margin-left: 30px;
     &:first-child {
       margin-left: 0;
-    }
+    } */
+  }
+  .item {
+    display: inline-flex;
+    padding: 1rem;
   }
 `
 
-function Menu() {
+function Menu({ className }) {
   return (
-    <Wrapper>
-      <MenuStyled>
-        <Logo />
-        <ul className="items">
-          {links.map(({ title, url }, index) => (
+    <MenuStyled className={className}>
+      <Logo />
+      <ul className="items">
+        {links.map(({ title, url }, index) => (
+          <li>
             <Link key={index} href={url}>
               <a className="item">{title}</a>
             </Link>
-          ))}
-        </ul>
-      </MenuStyled>
-    </Wrapper>
+          </li>
+        ))}
+      </ul>
+    </MenuStyled>
   )
 }
 
