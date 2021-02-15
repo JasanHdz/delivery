@@ -68,7 +68,6 @@ const MenuStyled = styled.nav`
 
 function Menu({ className }) {
   const pathname = useRouter().asPath
-  console.log(pathname)
   return (
     <MenuStyled className={className}>
       <Logo />

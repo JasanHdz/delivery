@@ -7,14 +7,10 @@ import Divider from 'common/divider'
 
 const Container = styled.div`
   padding: 1rem;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
   text-align: center;
   background-color: white;
   opacity: 0.5;
+  height: calc(100vh - 2rem);
 
   @media screen and (min-width: 550px) {
     background: transparent;
