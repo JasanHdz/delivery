@@ -32,11 +32,13 @@ const PrimaryButton = styled.button`
   ${({ medium }) => medium && 'font-size: 1.25em;'}
   text-decoration: none;
   outline: 0;
-  transition: 200ms ease-in-out;
+  :active {
+    transition: 200ms ease-in-out;
+  }
   &:hover {
     color: ${({ activeColor }) => activeColor};
     background: ${({ activeBackground }) => activeBackground};
-    /* transform: scale(1.01); */
+    transform: scale(1.01);
     /* box-shadow: inset 0 0 0 3px ${({ activeColor }) => activeColor}; */
   }
 `

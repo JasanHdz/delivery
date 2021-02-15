@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import Wrapper from './wrapper'
 import { FiMenu } from 'react-icons/fi'
@@ -12,22 +12,12 @@ const MenuStyled = styled(Menu)`
 const NavigationStyled = styled.div`
   position: fixed;
   top: 0;
-  right: 0;
   left: 0;
   z-index: 3;
-  /* padding: 1em 0; */
+  ${({ active }) => (active ? 'right: 0;' : 'right: initial;')};
   .toogle-button {
     position: relative;
     z-index: 3;
-    /* background-color: var(--primary);
-    border: 10px solid var(--primary); */
-    margin-left: -10px;
-    margin-top: -10px;
-    border-radius: 50%;
-    > * {
-      display: inline;
-      vertical-align: middle;
-    }
     .close {
       display: none;
     }
@@ -55,13 +45,18 @@ const NavigationStyled = styled.div`
 `
 
 function Navigation() {
+  const element = useRef(null);
+  const [active, setActive] = useState(false)
+  const handleChange = (event) => {
+    setActive(event.target.checked)
+  }
   return (
-    <NavigationStyled>
+    <NavigationStyled active={active}>
       <Wrapper>
-        <input className="checkbox" type="checkbox" id="toogle-button" name="active" />
+        <input onChange={handleChange} ref={element} className="checkbox" type="checkbox" id="toogle-button" name="active" />
         <label htmlFor="toogle-button" className="toogle-button">
-          <FiMenu className="open" size={25} color="white" />
-          <MdClose className="close" size={25} color="white" />
+          <FiMenu className="open" size={26} color="#262626" />
+          <MdClose className="close" size={26} color="#262626" />
         </label>
         <MenuStyled />
       </Wrapper>

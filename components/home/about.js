@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import Wrapper from '../common/wrapper'
+import Background from 'common/background';
 
-const Background = styled.section`
-  height: 642px;
-  background-color: var(--secondary);
-  display: flex; 
-  align-items: center;
-`
+// const Background = styled.section`
+//   height: 642px;
+//   background-color: var(--secondary);
+//   display: flex; 
+//   align-items: center;
+// `
 const AboutStyled = styled.div`
-  display: flex;
+  padding: 10px 0;
+  /* display: flex;
   align-items: center;
   justify-content: space-between;
   .subtitle {
@@ -24,17 +26,30 @@ const AboutStyled = styled.div`
     p {
       max-width: 700px;
     }
+  } */
+  .subtitle {
+    text-transform: uppercase;
+    color: white;
+  }
+  .about p {
+    margin: 10px 0 20px 0;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
   }
 `
 
 function About() {
   return (
-    <Background id="nosotros">
+    <Background id="nosotros" height="auto" color="var(--secondary)">
       <Wrapper>
         <AboutStyled>
           <div className="about">
             <h2 className="subtitle">nosotros</h2>
-            <p className="about-us">
+            <p>
             lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu 
             lorem ipsu lorem ipsu  lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsulorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu 
             lorem ipsu lorem ipsu  lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsulorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu .
@@ -46,12 +61,9 @@ function About() {
             lorem ipsu lorem ipsu  lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsulorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu 
             lorem ipsu lorem ipsu  lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsulorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu 
             lorem ipsu lorem ipsu  lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem 
-            <br />
-            <br />
-            lorem ipsu lorem ipsu  lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsulorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu lorem ipsu .
             </p>
           </div>
-          <img src="/delivery.jpg" alt="entrega de paquete" width="400" height="500" />
+          <img src="/delivery.jpg" alt="entrega de paquete" />
         </AboutStyled>
       </Wrapper>
     </Background>

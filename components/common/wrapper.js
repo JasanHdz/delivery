@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const WraperStyled = styled.div`
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem;
   max-width: ${({ maxWidth }) => maxWidth || '1280px'};
 `
 

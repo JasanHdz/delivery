@@ -33,6 +33,10 @@ const DefaultStyles = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 2rem;
   }
 `
 

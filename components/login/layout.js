@@ -6,7 +6,7 @@ const Background = styled.div`
   background-color: #5AA2BB;
   background-image: url('/home_full.jpg');
   background-size: cover;
-  background-position-x: -1078px;
+  background-position-x: -900px;
 
   @media screen and (min-width: 768px) {
     background-position-x: center;
