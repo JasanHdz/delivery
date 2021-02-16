@@ -17,10 +17,10 @@ const Box = styled.a`
   }
 `
 
-function Logo() {
+function Logo({ className }) {
   return (
     <Link href="/">
-      <Box>
+      <Box className={className}>
         <p className="box-title">logistic</p>
       </Box>
     </Link>

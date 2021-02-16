@@ -45,7 +45,6 @@ const HeroStyled = styled.section`
 
 function Hero() {
   const isMobile = usePhoneDimension()
-  console.log(isMobile)
   const handleClick = () => {
     Router.push('/#nosotros')
   }

@@ -1,12 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
-import Wrapper from './wrapper'
+import Container from './wrapper'
 import { FiMenu } from 'react-icons/fi'
 import { MdClose } from 'react-icons/md'
 import Menu from './menu'
 
-const MenuStyled = styled(Menu)`
-  
+const MenuStyled = styled(Menu)``
+
+const Wrapper = styled(Container)`
+  @media screen and (min-width: 1024px) {
+    padding: 12px 1rem;
+  }
 `
 
 const NavigationStyled = styled.div`
@@ -40,6 +44,16 @@ const NavigationStyled = styled.div`
     }
     ~ ${MenuStyled} {
       transform: translateX(0);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    position: sticky;
+    left: 0;
+    right: 0;
+    background-color: white;
+    .toogle-button {
+      display: none;
     }
   }
 `

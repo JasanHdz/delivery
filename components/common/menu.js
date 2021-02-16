@@ -31,6 +31,10 @@ const Anchor = styled.a`
   color: ${({ color }) => color || 'initial'};
 `
 
+const LogoStyled = styled(Logo)`
+  margin: 0;
+`
+
 const MenuStyled = styled.nav`
   padding: 56px 0 0 1rem;
   background-color: white;
@@ -64,18 +68,38 @@ const MenuStyled = styled.nav`
     display: block;
     padding: 1rem;
   }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0;
+    transform: initial;
+    max-width: initial;
+    position: initial;
+    min-height: initial;
+    background-color: initial;
+    flex-direction: initial;
+    justify-content: space-between;
+    .items {
+      display: flex;
+      li {
+        margin-right: 14px;
+      }
+      li:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 `
 
 function Menu({ className }) {
   const pathname = useRouter().asPath
   return (
     <MenuStyled className={className}>
-      <Logo />
+      <LogoStyled />
       <ul className="items">
         {links.map(({ title, url }, index) => (
-          <li>
-            <Link key={index} href={url}>
-              <Anchor color={pathname === url && 'var(--primary)'} className="item">{title}</Anchor>
+          <li key={index}>
+            <Link href={url}>
+              <Anchor color={pathname === url ? 'var(--primary)' : 'initial'} className="item">{title}</Anchor>
             </Link>
           </li>
         ))}
