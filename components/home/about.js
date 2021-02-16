@@ -3,30 +3,8 @@ import styled from 'styled-components'
 import Wrapper from '../common/wrapper'
 import Background from 'common/background';
 
-// const Background = styled.section`
-//   height: 642px;
-//   background-color: var(--secondary);
-//   display: flex; 
-//   align-items: center;
-// `
 const AboutStyled = styled.div`
   padding: 10px 0;
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .subtitle {
-    font-size: 48px;
-    color: white;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-  }
-  .about {
-    height: 500px;
-    margin-right: 50px;
-    p {
-      max-width: 700px;
-    }
-  } */
   .subtitle {
     text-transform: uppercase;
     color: white;
@@ -39,6 +17,26 @@ const AboutStyled = styled.div`
     height: auto;
     object-fit: contain;
     border-radius: 4px;
+    max-width: 401px;
+    max-height: 501px;
+    display: block;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    img {
+      object-fit: cover;
+    }
+    .about {
+      margin-right: 10px;
+      p {
+        max-width: 700px;
+      }
+    }
+    .subtitle {
+      font-size: 48px;
+    }
   }
 `
 

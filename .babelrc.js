@@ -15,8 +15,9 @@ const plugins = [
     {
       root: [path.resolve('./')],
       alias: aliases
-    }
-  ]
+    },
+  ],
+  '@babel/plugin-proposal-optional-chaining'
 ]
 
 module.exports = {

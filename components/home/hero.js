@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Router from 'next/router'
 import styled from 'styled-components'
 import Wrapper from 'common/wrapper'
 import Background from 'common/background'
+import usePhoneDimension from 'hooks/use-phone-dimension'
 import { SecondaryButton } from 'common/button'
 
 const HeroStyled = styled.section`
@@ -29,11 +30,22 @@ const HeroStyled = styled.section`
     max-width: 800px;
     max-height: 600px;
   }
+  @media screen and (min-width: 768px) {
+    padding: 0;
+    grid-template-columns: 440px 1fr;
+    align-items: center;
+    height: inherit;
+    .title {
+      font-size: 64px;
+      margin-bottom: 33px;
+    }
+  }
   
 `
 
-
 function Hero() {
+  const isMobile = usePhoneDimension()
+  console.log(isMobile)
   const handleClick = () => {
     Router.push('/#nosotros')
   }
@@ -43,10 +55,10 @@ function Hero() {
         <HeroStyled>
           <div className="description">
             <h1 className="title">Paquetería & transporte al por menor</h1>
-            {/* <SecondaryButton uppercase onClick={handleClick}>leer más</SecondaryButton> */}
+            {!isMobile && <SecondaryButton uppercase onClick={handleClick}>leer más</SecondaryButton>}
           </div>
           <img src="/montacargas.jpg" alt="montacarga" />
-          <SecondaryButton uppercase onClick={handleClick}>leer más</SecondaryButton>
+          {isMobile && <SecondaryButton uppercase onClick={handleClick}>leer más</SecondaryButton>}
         </HeroStyled>
       </Wrapper>
     </Background>
